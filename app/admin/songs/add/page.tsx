@@ -55,7 +55,7 @@ const isAuth =
 localStorage.getItem("auth");
 
 if (!isAuth) {
-  router.push("/login");
+  router.push("/admin");
 } else {
   setAuthChecked(true);
 }
