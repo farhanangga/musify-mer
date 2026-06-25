@@ -16,9 +16,6 @@ export default function Home() {
   const fileInputRef =
     useRef<HTMLInputElement>(null);
 
-  const [darkMode, setDarkMode] =
-    useState(true);
-
   const [file, setFile] =
     useState<File | null>(null);
 
@@ -179,25 +176,12 @@ export default function Home() {
   }
 
   return (
-    <main
-      className={`min-h-screen relative overflow-hidden transition-all duration-300
-        ${
-          darkMode
-            ? "bg-[#050816] text-white"
-            : "bg-slate-100 text-black"
-        }
-      `}
-    >
+    <main className="min-h-screen relative overflow-hidden transition-all duration-300">
       {/* BACKGROUND GLOW */}
       <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-cyan-500/20 blur-[180px]"/>
       <div className=" absolute bottom-0 right-0 w-[500px] h-[500px] bg-purple-500/20 blur-[180px]"/>
       {/* NAVBAR */}
-      <Navbar
-        darkMode={darkMode}
-        toggleDarkMode={() =>
-          setDarkMode(!darkMode)
-        }
-      />
+      <Navbar/>
       {/* HERO */}
       <section className="relative z-10 max-w-7xl mx-auto px-6 pt-12">
         <div className="text-center">
