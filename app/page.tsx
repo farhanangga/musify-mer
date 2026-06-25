@@ -52,7 +52,7 @@ export default function Home() {
   async function checkBackend() {
     try {
       const res = await fetch(
-        "http://localhost:8000/health"
+        `${process.env.NEXT_PUBLIC_API_MER_URL}/health`
       );
 
       if (res.ok) {
